@@ -74,7 +74,6 @@ Output:
 | PanWorld      | global |
 | Bokka         | None   |
 | enthundi      | len    |
-| ikkadidhaaka  | range  |
 | yentidhi      | type   |
 
 ---

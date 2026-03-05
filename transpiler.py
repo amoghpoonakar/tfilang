@@ -17,8 +17,7 @@ KEYWORD_MAP = {
     "PanWorld": "global",
     "Bokka": "None",
     "enthundi": "len",
-    "ikkadidhaaka": "range",
-    "yentidhi": "type",
+    "yentidhi": "type"
 }
 
 METHOD_MAP = {
@@ -36,7 +35,7 @@ METHOD_MAP = {
 
 
 def transform_postfix_not(code):
-    pattern = r"\(([^()]+)\)\s+kaadhu"
+    pattern = r"\((.*?)\)\s+kaadhu"
     while re.search(pattern, code):
         code = re.sub(pattern, r"not (\1)", code)
     return code
@@ -83,7 +82,7 @@ def transform_switch(code):
                     condition = " or ".join([f"{switch_var} == {v}" for v in values])
                     keyword = "if" if first_case else "elif"
 
-                    new_lines.append(" " * switch_indent + f"{keyword} {condition}:")
+                    new_lines.append(" " * indent + f"{keyword} {condition}:")
                     first_case = False
                     continue
 
@@ -97,15 +96,19 @@ def transform_switch(code):
     return "\n".join(new_lines)
 
 def transpile(code):
+
     code = transform_switch(code)
 
+    # keyword replacements
     for tfi_word, py_word in KEYWORD_MAP.items():
         code = re.sub(rf"\b{tfi_word}\b", py_word, code)
 
+    code = transform_postfix_not(code)
+
+    code = remove_idhi_declaration(code)
+
+    # method replacements LAST
     for tfi_method, py_method in METHOD_MAP.items():
         code = code.replace(tfi_method, py_method)
-
-    code = transform_postfix_not(code)
-    code = remove_idhi_declaration(code)
 
     return code

@@ -26,10 +26,14 @@ class YemJaruguthundiRaIkkada(TFILangException):
 
 
 def extract_line_number(e):
+    if hasattr(e, "lineno") and e.lineno is not None:
+        return e.lineno
+
     tb = traceback.extract_tb(e.__traceback__)
     if tb:
         return tb[-1].lineno
-    return "Unknown"
+
+    return None
 
 
 def map_python_error(e):
