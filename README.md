@@ -1,19 +1,14 @@
 # TFILang
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Language-TFILang-blue">
+  <img src="https://img.shields.io/badge/Transpiles%20to-Python-yellow">
+  <img src="https://img.shields.io/badge/Version-1.0.0-green">
+  <img src="https://img.shields.io/badge/Platform-Windows-lightgrey">
+</p>
+
 TFILang is a custom programming language that transpiles into Python.
 It provides simple readable syntax inspired by conversational keywords while still executing through Python.
-
----
-
-## Features
-
-* Simple and expressive syntax
-* Python transpilation
-* Built-in REPL
-* Custom error messages
-* Switch–case style syntax
-* List method shortcuts
-* Windows installer
 
 ---
 
@@ -101,17 +96,17 @@ Output:
 
 ---
 
-# Custom Syntax
+# Special Syntax
 
 ## Variable Declaration
 
-TFILang:
+TFILang
 
 ```
 idhi x = 5
 ```
 
-Python equivalent:
+Python
 
 ```
 x = 5
@@ -121,13 +116,13 @@ x = 5
 
 ## Postfix NOT Operator
 
-TFILang:
+TFILang
 
 ```
 (x > 10) kaadhu
 ```
 
-Python:
+Python
 
 ```
 not (x > 10)
@@ -135,9 +130,9 @@ not (x > 10)
 
 ---
 
-## Switch-Case Style Syntax
+## Switch Case
 
-TFILang:
+TFILang
 
 ```
 choodu_ipuudu(x):
@@ -152,7 +147,7 @@ choodu_ipuudu(x):
         paadu_gajaala("Other")
 ```
 
-Python equivalent:
+Python Equivalent
 
 ```
 if x == 1:
@@ -169,7 +164,7 @@ else:
 
 # Example Program
 
-TFILang:
+TFILang
 
 ```
 idhi numbers = [1,2,3]
@@ -179,7 +174,7 @@ numbers.pettaraa(4)
 paadu_gajaala(numbers)
 ```
 
-Python Equivalent:
+Python Equivalent
 
 ```
 numbers = [1,2,3]
