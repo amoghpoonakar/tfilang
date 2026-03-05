@@ -1,0 +1,11 @@
+idhi x = 2
+
+choodu_ipuudu (x):
+    aithe_idhi 1:
+        paadu_gajaala("One")
+
+    aithe_idhi 2, 3:
+        paadu_gajaala("Two or Three")
+
+    yedho_okkati:
+        paadu_gajaala("Other")
